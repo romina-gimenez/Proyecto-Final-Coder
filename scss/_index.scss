@@ -1,0 +1,140 @@
+@import "variables";
+
+* {
+    margin:0;
+    padding:0;
+ }
+
+body{
+    background-color: $color-fondos;
+}
+
+header {
+    display: flex;
+    align-items: left;
+    justify-content: space-around;
+    position: sticky;
+    top:0;
+    z-index: 1;
+    background-color: $color-fondos;
+    
+    .logo-mate{
+        width: 100px;
+        height: 100px;
+    }
+    .navbar{
+        list-style: none;
+        display: inline-block;
+        color: rgb(8, 8, 8);
+        font-size: 1rem; 
+    }
+}
+
+section {
+        h1{
+        font-family: $fuente-principal;
+        font-size: 2.5rem;
+        font-weight:bolder;
+        text-align: center;
+        color: $color-titulos; 
+        margin-top: 100px;  
+        animation-duration: 3.5s; 
+        animation-name: aparecer;
+
+        /********ANIMACIÓN INDEX********/
+        @keyframes aparecer {
+        0% {opacity: 0;}
+        50% {opacity: .5;}
+        100% {opacity: 1;}
+        }
+    }
+
+
+    .card-body{
+        background-color: $color-cards;
+        width: 100%;
+       
+        .btn{
+            @extend .boton;
+            background-color:#E4E6C3;
+            color:black;
+            font-family: $fuente-general;
+        }
+    }
+}
+
+
+.whatsapp {
+    position: fixed;
+    bottom: 0;
+    right: 100px;
+    img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+/*EXTENDS*/
+.boton {
+	width:150px;
+	height:30px;
+	background-color:#6D9886;
+	text-align:center;
+	color:black;
+	border-radius:20px;
+	border:.5px solid black;
+}
+
+.boton_verMas{
+	@extend .boton;
+	background-color:#E4E6C3;
+	color:black;
+    font-family: $fuente-general;
+}
+
+.boton_verMas{
+	@extend .boton;
+	background-color:#E4E6C3;
+	color:black;
+    font-family: $fuente-general;
+}
+
+
+/*footer*/
+footer{
+    background-color: $color-footer;
+    margin-top: 10%;
+            
+        p{
+            text-decoration: none;
+            color: $color-titulos;
+            font-family: $fuente-principal;
+        }
+        .lista-cierre{
+            list-style: none;
+            display: flex;  
+            gap: 50px;
+           
+            a{
+                text-decoration: none;
+                color: $color-titulos;
+                img{
+                    width: 20px;
+                }
+            }
+        }
+        
+}
+
+/*Dispositivos*/
+@media screen and (max-width: 768px){
+h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1rem;
+    font-weight:bolder;
+    font-style:italic;
+    text-align: center;
+    margin-top: 10px;
+}
+}

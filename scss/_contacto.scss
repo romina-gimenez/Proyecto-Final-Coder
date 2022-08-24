@@ -1,0 +1,136 @@
+@import "variables";
+
+.text-formulario{
+    font-family: $fuente-principal;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 95px;
+    margin-bottom: auto;
+}
+
+.formulario{
+    margin-left: 20px;
+    font-family: $fuente-general;
+   
+    .box{
+        margin:auto;
+        width: 400px;
+        height: 350px;
+        background-color: #6D9886;
+        text-align: center;
+        margin-top: 50px;
+          
+        .datos{
+            margin: 15px;
+        }
+
+        .novedades{
+            margin-top: 20px;
+            font-family: $fuente-general;
+        }
+    }
+}
+
+section {
+    h2{
+        color: $color-titulos;
+        font-family: $fuente-principal;
+        font-size: 2.3rem;
+        text-align: center;  
+        margin-top: 50px;   
+    }
+   .maps{
+        padding: 25px;
+        width: 400px;
+        height: 450px;
+    }
+
+}
+
+/*footer*/
+footer{
+    
+        .card__img{
+            width: 15px;
+        }
+}
+
+
+/*Dispositivos*/
+@media screen and (max-width: 768px){
+    h1{
+        .text-formulario{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: .5rem;
+        font-weight:bolder;
+        font-style:italic;
+        text-align: center;
+        margin-top: 10px;
+    }
+    }
+    h2{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: .5rem;
+        font-weight:bolder;
+        font-style:italic;
+        text-align: center;
+        margin-top: 50px;
+    }
+    .maps{
+        height: 300px;
+        width: 350px;
+        margin-left: 6%;
+    }
+}
+
+/*EXTENDS*/
+.boton {
+	width:150px;
+	height:30px;
+	background-color:white;
+	text-align:center;
+	color:black;
+	border-radius:20px;
+	border:.5px solid black;
+    margin:auto;
+    padding: 0%;
+
+}
+
+.boton__enviar{
+	@extend .boton;
+	background-color:#E4E6C3;
+	color:black;
+    font-family: $fuente-general;
+}
+
+.boton__cancelar{
+	@extend .boton;
+	background-color:#E4E6C3;
+	color:black;
+    font-family: $fuente-general;
+}
+
+/*MIXIN*/
+@mixin medida($width, $height) {
+    height: $height;
+    width: $width;
+ }
+ .box {
+    @include medida(360px, 250px);
+ }
+
+ /*MAP*/
+ $redSocial: ( 
+ facebook: black,
+ instagram:  #899878,
+ e-mail: #899878,
+); 
+
+/*EACH+MAP*/
+@each $red, $color in $redSocial {
+.btn--#{$red} {
+background-color: $color;
+}
+}
